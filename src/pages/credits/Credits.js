@@ -10,22 +10,22 @@ import {
 const teamMembers = [
     {
         id: 1,
-        name: 'Rigas Vasileiou',
-        photo: '/assets/team_photos/rigas.png', // Αναφορά από τη ρίζα του public
+        name: 'Rigas Vasileiou', 
+        photo: process.env.PUBLIC_URL + '/assets/team_photos/rigas.png', // Αναφορά από τη ρίζα του public
       //   linkedin: 'https://www.linkedin.com/in/yourprofile2',
       //   github: 'https://github.com/yourgithub2',
       },
     {
       id: 2,
       name: 'Panagiota Gyftou',
-      photo: '/assets/team_photos/panagiota.png', // Αναφορά από τη ρίζα του public
+      photo: process.env.PUBLIC_URL + '/assets/team_photos/panagiota.png', // Αναφορά από τη ρίζα του public
     //   linkedin: 'https://www.linkedin.com/in/yourprofile1',
     //   github: 'https://github.com/yourgithub1',
     },
     {
       id: 3,
       name: 'Panagiotis Fasoulidis',
-      photo: '/assets/team_photos/panagiotis.png', // Αναφορά από τη ρίζα του public
+      photo: process.env.PUBLIC_URL + '/assets/team_photos/panagiotis.png', // Αναφορά από τη ρίζα του public
     //   linkedin: 'https://www.linkedin.com/in/yourprofile3',
     //   github: 'https://github.com/yourgithub3',
     },

@@ -4,9 +4,10 @@ import './Sidebar.css';
 import { FaGithub, FaChevronRight, FaChevronLeft } from 'react-icons/fa';
 
 // Απευθείας διαδρομές για τις εικόνες από τον φάκελο 'public'
-const rigasPhotoUrl = '/assets/team_photos/rigas.png';
-const panagiotaPhotoUrl = '/assets/team_photos/panagiota.png';
-const panagiotisPhotoUrl = '/assets/team_photos/panagiotis.png';
+const rigasPhotoUrl = process.env.PUBLIC_URL + '/assets/team_photos/rigas.png';
+const panagiotaPhotoUrl = process.env.PUBLIC_URL + '/assets/team_photos/panagiota.png';
+const panagiotisPhotoUrl = process.env.PUBLIC_URL + '/assets/team_photos/panagiotis.png';
+
 
 const Sidebar = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
