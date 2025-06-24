@@ -1,0 +1,146 @@
+/* Container wrapper */
+.overlay-container {
+    display: flex;
+    align-items: flex-start;
+    padding-top: 80px;
+    /* consistent with top offset */
+    min-height: 100vh;
+    flex-direction: row;
+    /* Default for larger screens */
+}
+
+/* Sticky side panel graphic */
+.scroll__graphic {
+    position: fixed;
+    top: 40px;
+    width: 40%;
+    /* Default for larger screens */
+    align-self: flex-start;
+    z-index: 5;
+    margin-left: 25%;
+    /* Default for larger screens */
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+/* Scroll text column */
+.scroll__text {
+    width: 50%;
+    /* Default for larger screens */
+    margin-left: -77%;
+    /* Default for larger screens */
+}
+
+/* Each text step fills viewport */
+.step {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 5;
+    margin: 0;
+    padding: 0;
+}
+
+/* Overlay styling */
+.overlay {
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    max-width: 80%;
+    text-align: center;
+}
+
+/* Active step styling */
+.step.is-active .overlay {
+    background: rgba(255, 255, 255, 0.8);
+    color: #000;
+}
+
+/* --- Media Queries for Responsiveness --- */
+
+/* For screens smaller than 1200px (e.g., smaller desktops, large tablets) */
+@media (max-width: 1200px) {
+    .scroll__graphic {
+        width: 45%;
+        /* Slightly larger graphic */
+        margin-left: 20%;
+        /* Adjust margin */
+    }
+
+    .scroll__text {
+        width: 55%;
+        /* Slightly smaller text column */
+        margin-left: -80%;
+        /* Adjust margin */
+    }
+}
+
+/* For screens smaller than 992px (e.g., tablets) */
+@media (max-width: 992px) {
+    .overlay-container {
+        flex-direction: column;
+        /* Stack graphic and text vertically */
+        padding-top: 20px;
+        /* Reduce top padding */
+    }
+
+    .scroll__graphic {
+        position: relative;
+        /* Make it flow with the document */
+        top: auto;
+        width: 90%;
+        /* Full width for graphic */
+        margin: 0 auto 20px auto;
+        /* Center and add bottom margin */
+        order: 1;
+        /* Place graphic first */
+    }
+
+    .scroll__text {
+        width: 90%;
+        /* Full width for text */
+        margin: 0 auto;
+        /* Center text */
+        order: 2;
+        /* Place text second */
+    }
+
+    .step {
+        min-height: auto;
+        /* Allow steps to take natural height */
+        padding: 20px 0;
+        /* Add some vertical padding */
+    }
+}
+
+/* For screens smaller than 768px (e.g., large phones) */
+@media (max-width: 768px) {
+    .scroll__graphic {
+        width: 95%;
+        /* Make graphic almost full width */
+    }
+
+    .scroll__text {
+        width: 95%;
+        /* Make text almost full width */
+    }
+
+    .overlay {
+        padding: 0.8rem 1.5rem;
+        /* Reduce padding for overlay */
+    }
+}
+
+/* For screens smaller than 576px (e.g., small phones) */
+@media (max-width: 576px) {
+    .overlay {
+        padding: 0.5rem 1rem;
+        /* Further reduce padding for overlay */
+        max-width: 95%;
+        /* Allow overlay to take more width */
+    }
+}

@@ -1,0 +1,264 @@
+.home {
+    position: relative;
+    z-index: 5;
+    padding-top: 80px;
+    height: 180vh;
+    color: white;
+    /* text-align: center; -- ΑΦΑΙΡΕΘΗΚΕ ΑΠΟ ΕΔΩ */
+    padding-left: 1rem;
+    padding-right: 1rem;
+    box-sizing: border-box; /* Εξασφαλίζει ότι το padding δεν θα αυξήσει το συνολικό πλάτος */
+}
+
+h5 {
+    font-size: 2.0rem;
+    text-align: center; /* Ο τίτλος παραμένει κεντραρισμένος */
+    text-justify: center;
+}
+
+/* Νέα κλάση για το περιεχόμενο κειμένου */
+.text-content {
+    max-width: 900px; /* Καθορίζουμε ένα μέγιστο πλάτος για το μπλοκ κειμένου */
+    margin: 0 auto 2rem auto; /* Κεντράρισμα του μπλοκ κειμένου */
+    padding: 1.5rem 1.5rem; /* Αύξηση padding για να φαίνεται καλύτερα το πλαίσιο */
+    
+    /* Προσθήκη αμυδρού γκρι πλαισίου */
+    border: 1px solid rgba(150, 150, 150, 0.3); /* Γκρι (150,150,150) με 30% διαφάνεια */
+    border-radius: 12px; /* Ελαφρώς στρογγυλεμένες γωνίες */
+    background-color: rgba(12, 183, 23, 0.247); /* Πολύ διακριτικό σκούρο γκρι background με 10% διαφάνεια */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Αμυδρή σκιά */
+    box-sizing: border-box; /* Εξασφαλίζει ότι το padding δεν θα αυξήσει το συνολικό πλάτος */
+}
+
+.text-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 1rem; /* Κενό μεταξύ των παραγράφων */
+    text-align: justify; /* ΕΔΩ ΕΦΑΡΜΟΖΟΥΜΕ ΤΟ FULL ΣΤΟΙΧΙΣΗ */
+    text-justify: inter-word; /* Βοηθά στην καλύτερη στοίχιση */
+}
+
+.text-content p:last-child {
+    margin-bottom: 0; /* Δεν χρειάζεται περιττό κενό στην τελευταία παράγραφο */
+}
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 45px; /* Μεγαλύτερο κουμπί */
+    height: 45px; /* Μεγαλύτερο κουμπί */
+    background-color: #007bff; /* Μπλε χρώμα για καλύτερη ορατότητα */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Πιο έντονη σκιά */
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+    z-index: 10; /* Να εμφανίζεται πάνω από άλλα στοιχεία */
+}
+
+.scroll-to-top:hover {
+    background-color: #0056b3; /* Σκούρο μπλε στο hover */
+    transform: scale(1.1);
+}
+
+.tableau-section {
+    display: flex;
+    justify-content: center; /* Κεντράρισμα των wrappers */
+    flex-wrap: wrap; /* Επιτρέπει στα στοιχεία να πέφτουν σε νέα γραμμή */
+    gap: 2rem; /* Κενό μεταξύ των wrappers */
+    margin-top: 2rem;
+    padding: 0 1rem; /* Ελαφρύ padding για το section */
+    box-sizing: border-box;
+}
+
+.tableau-wrapper {
+    flex: 1 1 calc(50% - 1rem); /* Δύο στήλες, λαμβάνοντας υπόψη το gap */
+    max-width: calc(50% - 1rem); /* Εξασφαλίζει δύο στήλες */
+    min-width: 320px; /* Ελάχιστο πλάτος για κάθε πλαίσιο Tableau */
+    background-color: rgba(255, 255, 255, 0.08); /* Ελαφρώς πιο ορατό background */
+    border-radius: 15px; /* Πιο στρογγυλεμένες γωνίες */
+    padding: 1.5rem; /* Περισσότερο padding */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Πιο έντονη σκιά */
+    transition: transform 0.3s ease; /* Smooth transition on hover */
+    box-sizing: border-box;
+}
+
+.tableau-wrapper:hover {
+    transform: translateY(-5px); /* Εφέ ανασηκώματος στο hover */
+}
+
+.tableau-wrapper h2 {
+    font-size: 1.4rem; /* Μεγαλύτερο μέγεθος γραμματοσειράς */
+    color: #00ccff; /* Ανοιχτό μπλε χρώμα για τίτλους */
+    margin-bottom: 1rem;
+    text-align: center; /* Κεντράρισμα τίτλων */
+}
+
+/* Optional: style the iframe inside TableauEmbed */
+.tableau-wrapper iframe {
+    width: 100% !important;
+    height: 450px !important; /* Αυξημένο ύψος για καλύτερη προβολή */
+    background: transparent !important;
+    mix-blend-mode: screen; /* Ή: lighten. Εξαρτάται από το υπόβαθρο του Tableau */
+    border: none;
+    border-radius: 8px; /* Στρογγυλεμένες γωνίες για το iframe */
+}
+
+/* --- Media Queries για Responsive Design --- */
+
+/* Για οθόνες tablet και μικρότερους φορητούς υπολογιστές (πλάτος έως 992px) */
+@media (max-width: 992px) {
+    .tableau-wrapper {
+        flex: 1 1 calc(50% - 1rem); /* Εξακολουθεί να προσπαθεί για 2 στήλες */
+        max-width: calc(50% - 1rem);
+        min-width: 280px; /* Ελαφρώς μικρότερο ελάχιστο πλάτος */
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    .text-content {
+        padding: 1.2rem 1.2rem;
+    }
+
+    .text-content p {
+        font-size: 1rem;
+    }
+}
+
+/* Για οθόνες tablet σε πορτρέτο και smartphones (πλάτος έως 768px) */
+@media (max-width: 768px) {
+    .home {
+        padding-top: 60px; /* Μείωση padding για μικρότερες οθόνες */
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .text-content {
+        padding: 1rem 1rem; /* Μείωση padding για μικρότερες οθύνες */
+        border-radius: 8px; /* Ελαφρώς μικρότερο border-radius */
+    }
+
+    .text-content p {
+        font-size: 0.95rem;
+        /* Σε πολύ μικρές οθόνες, το justify μπορεί να φαίνεται άσχημα. */
+        /* Θα το αλλάξουμε σε left για καλύτερη αναγνωσιμότητα. */
+        text-align: left; /* Αλλαγή σε αριστερή στοίχιση για κινητά */
+    }
+
+    .tableau-section {
+        flex-direction: column; /* Στοίβαξη των στοιχείων κάθετα */
+        align-items: center; /* Κεντράρισμα των στοιχείων όταν είναι στοιβαγμένα */
+        gap: 1.5rem; /* Ελαφρώς μικρότερο κενό */
+    }
+
+    .tableau-wrapper {
+        flex: 1 1 90%; /* Παίρνει μεγαλύτερο πλάτος */
+        max-width: 90%; /* Όριο συνολικού πλάτους */
+        min-width: unset; /* Αφαίρεση περιορισμού min-width όταν στοιβάζονται */
+        padding: 1rem; /* Μείωση padding */
+    }
+
+    .tableau-wrapper h2 {
+        font-size: 1.2rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .tableau-wrapper iframe {
+        height: 380px !important; /* Προσαρμογή ύψους Tableau embed για μικρότερες οθόνες */
+    }
+
+    .scroll-to-top {
+        width: 40px;
+        height: 40px;
+        bottom: 15px;
+        right: 15px;
+    }
+}
+
+/* Για μικρές οθόνες κινητών τηλεφώνων (πλάτος έως 480px) */
+@media (max-width: 480px) {
+    .home {
+        padding-top: 50px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .text-content {
+        padding: 0.8rem 0.8rem; /* Ακόμα μικρότερο padding */
+        border-radius: 6px;
+    }
+
+    .text-content p {
+        font-size: 0.9rem;
+        text-align: left; /* Σταθερά αριστερή στοίχιση */
+    }
+
+    .tableau-wrapper {
+        padding: 0.8rem;
+        max-width: 95%;
+    }
+
+    .tableau-wrapper h2 {
+        font-size: 1.1rem;
+    }
+
+    .tableau-wrapper iframe {
+        height: 300px !important;
+    }
+
+    .scroll-to-top {
+        width: 35px;
+        height: 35px;
+        bottom: 10px;
+        right: 10px;
+    }
+}
+
+/* --- Media Query for Very Large Desktops (e.g., > 1440px) --- */
+@media (min-width: 1441px) { /* Ή min-width: 1601px αν θέλετε ακόμα μεγαλύτερες */
+    .home {
+        padding-top: 100px; /* Λίγο περισσότερο κενό από την κορυφή */
+    }
+
+    h1 {
+        font-size: 3rem; /* Μεγαλύτερος τίτλος */
+    }
+
+    .text-content {
+        max-width: 1000px; /* Ακόμα πιο πλατύ μπλοκ κειμένου */
+        padding: 2rem 2rem; /* Περισσότερο padding μέσα στο πλαίσιο */
+    }
+
+    .text-content p {
+        font-size: 1.2rem; /* Μεγαλύτερο μέγεθος γραμματοσειράς για το κείμενο */
+    }
+
+    .tableau-section {
+        gap: 3rem; /* Μεγαλύτερο κενό μεταξύ των Tableau embeds */
+    }
+
+    .tableau-wrapper {
+        flex: 1 1 calc(50% - 1.5rem); /* Προσαρμογή flex-basis για το μεγαλύτερο gap */
+        max-width: calc(50% - 1.5rem);
+        padding: 2rem; /* Περισσότερο padding μέσα στα Tableau wrappers */
+    }
+
+    .tableau-wrapper h2 {
+        font-size: 1.6rem; /* Μεγαλύτεροι τίτλοι για τα Tableau */
+    }
+
+    .tableau-wrapper iframe {
+        height: 550px !important; /* Μεγαλύτερο ύψος για τα Tableau embeds */
+    }
+}
