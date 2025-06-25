@@ -17,14 +17,14 @@ function App() {
     <>
     {/* <LanguageProvider> */}
       <CyberGlobe />
-      <Router basename="/">
+      <Router basename="/cyber-threats/">
         <NavigationBar />
         <SocialSidebar /> {/* <-- Προσθήκη του Sidebar εδώ */}
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/visualization" element={<Visualization />} />
-          <Route path="/scrollytelling" element={<ScrollytellingPage />} />
-          <Route path="/credits" element={<Credits />} />
+          <Route path="/cyber-threats" element={<Home />} />
+          <Route path="/cyber-threats/visualization" element={<Visualization />} />
+          <Route path="/cyber-threats/scrollytelling" element={<ScrollytellingPage />} />
+          <Route path="/cyber-threats/credits" element={<Credits />} />
           {/* <Route path="/" element={<On />}></Route> */}
         </Routes>
       </Router>
