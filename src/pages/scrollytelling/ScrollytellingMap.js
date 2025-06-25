@@ -19,16 +19,14 @@ const ScrollytellingMap = forwardRef((props, ref) => {
 
     /* Use D3 to select all paths and update via selection */
     d3.select(svgRef.current)
-      .selectAll("g")
-      .filter((d, i, nodes) => d3.select(nodes[i]).attr("cursor") === "pointer")
       .selectAll("path")
       .style("fill", d => {
         const name = d?.properties?.name;
         return name === countryName
-          ? "red"
+          ? "red" // Χρωμάτισε την επιλεγμένη χώρα κόκκινη
           : countryInfo[name]
-          ? "#888"
-          : "#444";
+          ? "#888" // Χώρες με δεδομένα
+          : "#444"; // Χώρες χωρίς δεδομένα (πιο σκούρο γκρι)
       });
 
     /* Info box update */
@@ -114,7 +112,10 @@ const ScrollytellingMap = forwardRef((props, ref) => {
 
     infoBoxRef.current = infoBox;
 
-    d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json").then(world => {
+    // **Αλλαγή εδώ: Χρησιμοποιήστε ένα πιο λεπτομερές αρχείο GeoJSON/TopoJSON**
+    d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json").then(world => {
+    // Εναλλακτικά, αν το 50m δεν είναι αρκετό, δοκιμάστε το 10m:
+    // d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-10m.json").then(world => {
       const allCountries = topojson.feature(world, world.objects.countries).features;
       countriesRef.current = allCountries;
 
