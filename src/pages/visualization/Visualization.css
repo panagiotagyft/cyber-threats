@@ -82,19 +82,25 @@
 }
 
 /* Embed + aspect-ratio fix */
+/* Embed + aspect-ratio fix */
 .viz-embed {
   width: 100%;
   display: flex;
   margin-top: 2rem;
   position: relative;
   flex-direction: column;
+  /* ήδη έχει flex & position */
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
+
+
 .tableau {
   position: relative;
   width: 100%;
   padding-bottom: 56.25%; /* 16:9 aspect ratio */
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 .viz-embed iframe {
   position: absolute;
