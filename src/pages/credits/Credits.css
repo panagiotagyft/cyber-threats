@@ -2,18 +2,18 @@
 
 /* Διαφανές background για το Modal */
 .team-modal-backdrop .MuiBackdrop-root {
-    background-color: rgba(0, 0, 0, 0.5);
+    /* background-color: rgba(0, 0, 0, 0.5); */
     z-index: 20;
     /* 50% διαφάνεια */
 }
 
 .team-modal-content h1 {
-    color: white;
+    color: rgb(255, 255, 255);
     /* Ορίζουμε το χρώμα των ονομάτων σε λευκό */
     font-family: 'Genos', sans-serif;
-    font-size: xx-large;
+    font-size: 40px;
     /* Ορίζουμε το μέγεθος γραμματοσειράς σε xx-large */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    text-shadow: 2px 2px 4px rgb(0, 0, 0);
     /* Προσθήκη σκίασης κειμένου */
     /* Εφαρμόζουμε τη γραμματοσειρά Genos */
 }
@@ -21,21 +21,21 @@
 /* Στυλ για το περιεχόμενο του Modal */
 .team-modal-content {
     position: absolute;
-    top: 50%;
+    top: 160%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(255, 255, 255, 0.3);
+    /* background-color: rgba(255, 255, 255, 0.3); */
     /* Ελαφρώς πιο διαφανές λευκό */
     border-radius: 8px;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-    padding: 50px;
-    width: 60%;
+    padding: 100px;
+    width: 70%;
     /* Κρατάμε το πλάτος, αλλά θα το κάνουμε πιο responsive */
-    max-width: 900px;
+    max-width: 1000px;
     /* Προσθήκη μέγιστου πλάτους για μεγαλύτερες οθόνες */
-    max-height: 90vh;
+    max-height: 5000vh;
     text-align: center;
-    overflow-y: auto;
+    /* overflow-y: auto; */
     /* Προσθήκη scroll αν το περιεχόμενο είναι πολύ μεγάλο */
 }
 
