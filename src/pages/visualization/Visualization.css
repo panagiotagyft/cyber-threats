@@ -189,10 +189,29 @@
   background-color: #eee;
 }
 
+/* Το container του link πρέπει να παίρνει events */
 .viz-source {
-  max-width: 800px;
-  margin: 1rem auto 2rem auto;
+  position: relative;
+  z-index: 200;       /* πάνω από το iframe */
+  pointer-events: auto;
+  max-width: 1200px;
+  margin: 1rem auto;
+  padding-left: 1.5rem;
   font-size: 0.9rem;
   color: #ccc;
-  text-align: right;
+  text-align: left;
+  box-sizing: border-box;
+  margin-top:-150px;
+}
+
+/* Το ίδιο το <a> */
+.viz-source a {
+  color: #ccc;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.viz-source a:hover {
+  text-decoration: underline;
+  color: #007bff;
 }

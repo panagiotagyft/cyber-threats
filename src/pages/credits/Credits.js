@@ -53,6 +53,13 @@ const creditsList = [
       { name: 'GitHub Repository', href: 'https://github.com/panagiotagyft/cyber-threats', license: 'MIT License' }, // Assuming MIT License based on your link
     ],
   },
+  {
+    title: 'Sources of the visualizations',
+    content: [
+      { name: 'Sources used for Tableau visualization & scrollytelling', href: 'https://drive.google.com/file/d/1EId0NgVcw8Yu4TAtpNqvgna0D083sBpM/view', license: '' }, // Assuming MIT License based on your link
+    ],
+  },
+  
 ];
 
 const Credits = () => {

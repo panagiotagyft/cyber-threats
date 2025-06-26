@@ -6,7 +6,6 @@ import './Visualization.css';
 export default function Visualization() {
   const dashboardUrl = 'https://public.tableau.com/views/CyberSecurityViz_updated2/Dashboard1';
   const title = 'Cyber Threats: Defense Mechanisms and Industry Impact (2015-2024)';
-  const dataSource = 'Tableau Public';
 
   const [showInfoBox, setShowInfoBox] = useState(false);
 
@@ -26,7 +25,7 @@ export default function Visualization() {
       </div>
 
       <div className="text-content-ins">
-        <h2>Instructions</h2>
+    
         <p>This interactive cybersecurity dashboard examines the evolution and global distribution of cyber threats between 2015 and 2024. It provides a data-driven analysis of how different types of cyberattacks impact critical industries, countries and users, and how defense mechanisms influence the time required to resolve incidents. The dataset powering the dashboard originates from publicly recognized frameworks and threat intelligence sources, such as the Verizon DBIR, ENISA Threat Landscape Reports, and the MITRE ATT&CK Framework.</p>
         <p>The visualization focuses on selected countries with strategic digital ecosystems: Japan, China, Russia, the United States, Brazil, the United Kingdom, France, Germany, Australia, and India. These nations represent diverse threat exposure profiles, regulatory responses and cybersecurity maturity levels.</p>
         <p>The dashboard consists of 2 filters and 3 interconnected visual elements:
@@ -94,7 +93,16 @@ export default function Visualization() {
         </div>
       </div> 
 
-      <p className="viz-source">{dataSource}</p>
+      <p className="viz-source">
+        <a
+          href="https://www.kaggle.com/datasets/atharvasoundankar/global-cybersecurity-threats-2015-2024"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Kaggle Dataset: Global Cybersecurity Threats (2015–2024)
+        </a>
+      </p>
+
     </div>
   );
 }
