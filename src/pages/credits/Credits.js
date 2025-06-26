@@ -92,7 +92,7 @@ const Credits = () => {
           Professor: <Link href="https://www.makebelieve.gr/mroussou/" target="_blank" rel="noopener noreferrer" sx={{ color: '#11cece', textDecoration: 'underline' }}>Maria Roussou</Link>
         </Typography>
         <Typography variant="h6" component="p" sx={{ mt: 1 }}>
-          Course: <Link href="https://www.makebelieve.gr/mroussou/" target="_blank" rel="noopener noreferrer" sx={{ color: '#11cece', textDecoration: 'underline' }}>Data Visualization - M126</Link>
+          Course: <Link href="https://www.di.uoa.gr/sites/default/files/documents/grad/grad_cs_courses/Μ126%20Οπτικοποίηση%20Δεδομένων.pdf" target="_blank" rel="noopener noreferrer" sx={{ color: '#11cece', textDecoration: 'underline' }}>Data Visualization - M126</Link>
         </Typography>
       </Box>
 
