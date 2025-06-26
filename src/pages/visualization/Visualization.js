@@ -48,13 +48,14 @@ export default function Visualization() {
       )}
 
       <h5 className="viz-title1">{title}</h5>
-
-     <div className="viz-embed">
+      
+      <div className="viz-embed">
+        {/* Το info-icon μετακινήθηκε μέσα στο div "tableau" */}
         <div className="tableau">
           <TableauEmbed url={dashboardUrl} />
+          <div className="info-icon" onClick={handleInfoClick}>i</div> {/* ΤΩΡΑ ΕΔΩ! */}
         </div>
-        <div className="info-icon" onClick={handleInfoClick}>i</div>
-      </div>
+      </div> 
 
       <p className="viz-source">{dataSource}</p>
     </div>
