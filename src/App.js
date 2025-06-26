@@ -1,35 +1,36 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/home/Home";
 import Credits from "./pages/credits/Credits";
 import CyberGlobe from './components/globe/Globe';
 import './App.css';
 import NavigationBar from './components/navbar/NavigationBar';
-// import On from './on';
-// import Sources from "./pages/sources/Sources";
 import Visualization from "./pages/visualization/Visualization";
 import ScrollytellingPage from "./pages/scrollytelling/ScrollytellingPage";
-// import { LanguageProvider } from "./context/LanguageContext";
-import SocialSidebar from './components/sidebar/Sidebar'; // <-- Νέα εισαγωγή
+import SocialSidebar from './components/sidebar/Sidebar';
 
 function App() {
   return (
     <>
-    {/* <LanguageProvider> */}
       <CyberGlobe />
-      <Router basename="/cyber-threats">
+
+      {/* Ξεκινάμε εδώ τον HashRouter: */}
+      <Router>
         <NavigationBar />
-        <SocialSidebar /> {/* <-- Προσθήκη του Sidebar εδώ */}
+        <SocialSidebar />
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/visualization" element={<Visualization />} />
           <Route path="/scrollytelling" element={<ScrollytellingPage />} />
           <Route path="/credits" element={<Credits />} />
-          {/* <Route path="/" element={<On />}></Route> */}
+
+          {/* Fallback για κάθε άλλο path */}
+          <Route path="*" element={<Home />} />
         </Routes>
       </Router>
-      {/* </LanguageProvider> */}
-        </>
+      {/* Τέλος Router */}
+    </>
   );
 }
 
