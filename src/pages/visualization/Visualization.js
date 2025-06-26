@@ -34,6 +34,7 @@ export default function Visualization() {
             The dashboard begins by highlighting six primary cyber threats: Distributed Denial of Service (DDoS), Malware, Man-in-the-Middle (MiTM), Phishing, Ransomware, and SQL Injection. These categories are aligned with definitions and classifications drawn from ENISA’s Threat Landscape Reports and the MITRE ATT&CK Framework, ensuring taxonomic consistency and technical validity.
             By allowing users to toggle between different threat types, the dashboard supports multidimensional analysis, enabling exploration of how each attack vector propagates, which systems or sectors it targets, and how response mechanisms differ accordingly. This design enhances the user's situational awareness and supports cross-threat comparison within a unified analytical framework, a feature commonly employed in cyber threat intelligence platforms.
         </p>
+        
         <p>Let us briefly explore the significance of each major cyber threat:</p>
         <p>Distributed Denial of Service
             A DDoS attack overwhelms a network, server, or online service with a flood of internet traffic, rendering it unavailable to legitimate users. These attacks typically originate from large networks of compromised devices (botnets).
