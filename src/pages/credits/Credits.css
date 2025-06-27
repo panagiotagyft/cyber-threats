@@ -2,7 +2,7 @@
 
 /* Διαφανές background για το Modal */
 .team-modal-backdrop .MuiBackdrop-root {
-    /* background-color: rgba(0, 0, 0, 0.5); */
+    height: 180vh;
     z-index: 20;
     /* 50% διαφάνεια */
 }
@@ -32,7 +32,7 @@
     width: 70%;
     /* Κρατάμε το πλάτος, αλλά θα το κάνουμε πιο responsive */
     max-width: 1000px;
-    /* Προσθήκη μέγιστου πλάτους για μεγαλύτερες οθόνες */
+    min-height: 150vh;
     max-height: 5000vh;
     text-align: center;
     /* overflow-y: auto; */
