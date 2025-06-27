@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/cyber-threats/static/css/main.39f71e21.css",
+    "main.css": "/cyber-threats/static/css/main.73c8b76a.css",
     "main.js": "/cyber-threats/static/js/main.31f4f701.js",
     "index.html": "/cyber-threats/index.html",
-    "main.39f71e21.css.map": "/cyber-threats/static/css/main.39f71e21.css.map",
+    "main.73c8b76a.css.map": "/cyber-threats/static/css/main.73c8b76a.css.map",
     "main.31f4f701.js.map": "/cyber-threats/static/js/main.31f4f701.js.map"
   },
   "entrypoints": [
-    "static/css/main.39f71e21.css",
+    "static/css/main.73c8b76a.css",
     "static/js/main.31f4f701.js"
   ]
 }
