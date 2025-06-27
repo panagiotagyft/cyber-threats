@@ -1,38 +1,40 @@
-/* Credits.css */
 @import url('https://fonts.googleapis.com/css2?family=Genos&display=swap');
 
-.team-modal-backdrop .MuiBackdrop-root {
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 20;
-}
+/* Default styles (for larger screens - Desktop, large Laptops) */
+/* These styles apply unless a more specific media query overrides them. */
 
-.team-modal-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 70%;
-    max-width: 1000px;
-    padding: 100px;
-    min-height: auto;
-    max-height: 90vh;
-    text-align: center;
-    overflow-y: auto;
-    border-radius: 8px;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-    /* Uncomment for translucent background:
-    background-color: rgba(255, 255, 255, 0.3);
-    */
+.team-modal-backdrop .MuiBackdrop-root {
+    height: 180vh;
+    z-index: 20;
+    /* 50% διαφάνεια - This comment was in your original, if you want actual transparency you need background-color: rgba(0,0,0,0.5); */
 }
 
 .team-modal-content h1 {
-    color: #fff;
+    color: rgb(255, 255, 255);
     font-family: 'Genos', sans-serif;
     font-size: 40px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 4px rgb(0, 0, 0);
 }
 
+/* Στυλ για το περιεχόμενο του Modal */
+.team-modal-content {
+    position: absolute;
+    top: 140%; /* Might be too low for some screens, adjusted in media queries */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* background-color: rgba(255, 255, 255, 0.3); */ /* Uncomment if you want a translucent background for the modal itself */
+    border-radius: 8px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 100px;
+    width: 70%;
+    max-width: 1000px;
+    min-height: 150vh; /* Adjusts minimum height based on viewport, might be large */
+    max-height: 5000vh; /* Very large max height, usually not problematic if overflow is handled */
+    text-align: center;
+    overflow-y: auto; /* <-- **Πολύ Σημαντικό!** Προσθήκη scroll αν το περιεχόμενο είναι πολύ μεγάλο */
+}
+
+/* Στυλ για την κάρτα του μέλους της ομάδας */
 .team-member-card {
     display: flex;
     flex-direction: column;
@@ -41,94 +43,108 @@
     padding: 20px;
     border-radius: 8px;
     transition: transform 0.3s ease-in-out;
-    height: 100%;
+    height: 100%; /* Ensures the card takes full available height */
 }
 
+/* Στυλ για τα ονόματα των μελών της ομάδας (το `<p>` tag από το Typography) */
 .team-member-card p {
     color: white;
     font-family: 'Genos', sans-serif;
 }
 
+/* Στυλ για τον σύνδεσμο της φωτογραφίας */
 .team-member-photo-link {
     display: block;
-    line-height: 0;
+    line-height: 0; /* Removes extra space below image */
 }
 
+/* Στυλ για την φωτογραφία του μέλους */
 .team-member-photo {
-    width: 100%;
-    max-width: 150px;
-    height: auto;
-    object-fit: contain;
+    width: 100%; /* Image takes available width in its container */
+    max-width: 150px; /* Maximum width for the image */
+    height: auto; /* Maintains aspect ratio */
+    object-fit: contain; /* Ensures image fits without cropping */
     border: none;
     box-shadow: none;
     transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
 }
 
+/* Μεγένθυνση της φωτογραφίας στο hover */
 .team-member-photo-link:hover .team-member-photo {
-    transform: scale(1.1);
-    filter: brightness(1.2);
+    transform: scale(1.1); /* Zoom in 10% */
+    filter: brightness(1.2); /* Make 20% brighter on hover */
 }
 
+/* Ρυθμίσεις για τα εικονίδια */
 .MuiIconButton-root {
     margin: 0 5px;
 }
 
 /* --- Media Queries for Responsiveness --- */
 
+/* For Tablets and smaller laptops (e.g., screens up to 1024px wide) */
 @media (max-width: 1024px) {
     .team-modal-content {
-        width: 85%;
-        padding: 60px;
+        width: 85%; /* Broader modal */
+        padding: 60px; /* Reduced padding */
+        top: 100%; /* Move modal higher */
+        transform: translate(-50%, -50%); /* Re-center after top change */
+        min-height: 100vh; /* Ensure it takes at least the viewport height */
     }
 
     .team-modal-content h1 {
-        font-size: 36px;
+        font-size: 36px; /* Slightly smaller font size */
     }
 
     .team-member-photo {
-        max-width: 120px;
+        max-width: 120px; /* Smaller photos */
     }
 }
 
+/* For larger Mobile devices and small Tablets (e.g., screens up to 768px wide) */
 @media (max-width: 768px) {
     .team-modal-content {
-        width: 90%;
-        padding: 40px;
+        top: 80%; /* Further adjust position to be higher up for smaller screens */
+        width: 90%; /* Take up more width */
+        padding: 40px; /* Further reduce padding */
+        min-height: 90vh; /* Adjust min height */
     }
 
     .team-modal-content h1 {
-        font-size: 30px;
+        font-size: 30px; /* Even smaller font size */
     }
 
     .team-member-photo {
-        max-width: 100px;
+        max-width: 100px; /* Smaller photos for mobile */
     }
 
     .team-member-card {
-        padding: 15px;
+        padding: 15px; /* Slightly reduce card padding */
     }
 }
 
+/* For Mobile devices (e.g., screens up to 480px wide) */
 @media (max-width: 480px) {
     .team-modal-content {
-        width: 95%;
-        padding: 20px;
+        top: 60%; /* Even higher position to prevent being cut off */
+        width: 95%; /* Almost full width */
+        padding: 20px; /* Minimal padding */
+        min-height: 80vh; /* Adjust min height for very small screens */
     }
 
     .team-modal-content h1 {
-        font-size: 24px;
-    }
-
-    .team-member-photo {
-        max-width: 80px;
+        font-size: 24px; /* Smallest font size for mobile headings */
     }
 
     .team-member-card {
-        padding: 10px;
+        padding: 10px; /* Reduce card padding further */
+    }
+
+    .team-member-photo {
+        max-width: 80px; /* Smallest photo size for mobile */
     }
 
     .MuiIconButton-root {
-        margin: 0 2px;
+        margin: 0 2px; /* Smaller margins for icons */
     }
 }
-
