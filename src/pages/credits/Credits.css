@@ -1,12 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Genos&display=swap');
 
+/* Επαναφορά default margins/paddings για καθαρότερη βάση */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Ensure html and body take full height of the viewport */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
 /* Default styles (for larger screens - Desktop, large Laptops) */
-/* These styles apply unless a more specific media query overrides them. */
 
 .team-modal-backdrop .MuiBackdrop-root {
-    height: 180vh;
+    height: 100vh; /* Usually backdrop should cover the entire viewport */
+    width: 100vw; /* Ensure backdrop covers full width */
+    position: fixed; /* Keep it fixed relative to the viewport */
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black backdrop */
     z-index: 20;
-    /* 50% διαφάνεια - This comment was in your original, if you want actual transparency you need background-color: rgba(0,0,0,0.5); */
 }
 
 .team-modal-content h1 {
@@ -14,25 +25,36 @@
     font-family: 'Genos', sans-serif;
     font-size: 40px;
     text-shadow: 2px 2px 4px rgb(0, 0, 0);
+    margin-bottom: 40px; /* Προσθήκη κενού κάτω από τον τίτλο */
 }
 
 /* Στυλ για το περιεχόμενο του Modal */
 .team-modal-content {
-    position: absolute;
-    top: 140%; /* Might be too low for some screens, adjusted in media queries */
+    position: absolute; /* or fixed, depending on desired behavior relative to scroll */
+    top: 50%; /* Start higher */
     left: 50%;
-    transform: translate(-50%, -50%);
-    /* background-color: rgba(255, 255, 255, 0.3); */ /* Uncomment if you want a translucent background for the modal itself */
+    transform: translate(-50%, -50%); /* Center based on its own dimensions */
+
+    background-color: rgba(0, 0, 0, 0.7); /* Ελαφρώς διαφανές σκούρο background για το modal */
     border-radius: 8px;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-    padding: 100px;
-    width: 70%;
-    max-width: 1000px;
-    min-height: 150vh; /* Adjusts minimum height based on viewport, might be large */
-    max-height: 5000vh; /* Very large max height, usually not problematic if overflow is handled */
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5); /* Πιο έντονη σκίαση για καλύτερο οπτικό διαχωρισμό */
+
+    padding: 60px; /* Reduce initial padding slightly for better fit */
+    width: 80%; /* Start with a bit wider width for better content display */
+    max-width: 900px; /* Slightly reduced max-width to be more accommodating */
+
+    /* **Κρίσιμες αλλαγές για το ύψος και το overflow** */
+    max-height: 90vh; /* Modal's max height is 90% of viewport height */
+    overflow-y: auto; /* Προσθήκη scroll αν το περιεχόμενο είναι πολύ μεγάλο */
+
     text-align: center;
-    overflow-y: auto; /* <-- **Πολύ Σημαντικό!** Προσθήκη scroll αν το περιεχόμενο είναι πολύ μεγάλο */
+    z-index: 21; /* Higher z-index than backdrop */
+    display: flex; /* Flexbox for internal content alignment */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: flex-start; /* Align content to the start (top) */
+    align-items: center; /* Center items horizontally */
 }
+
 
 /* Στυλ για την κάρτα του μέλους της ομάδας */
 .team-member-card {
@@ -43,108 +65,193 @@
     padding: 20px;
     border-radius: 8px;
     transition: transform 0.3s ease-in-out;
-    height: 100%; /* Ensures the card takes full available height */
+    /* height: 100%; - Removed, let content dictate height */
+    margin-bottom: 30px; /* Add space between cards */
 }
 
 /* Στυλ για τα ονόματα των μελών της ομάδας (το `<p>` tag από το Typography) */
 .team-member-card p {
     color: white;
     font-family: 'Genos', sans-serif;
+    font-size: 20px; /* Slightly adjusted font size */
+    margin-top: 10px; /* Space between photo and name */
 }
 
 /* Στυλ για τον σύνδεσμο της φωτογραφίας */
 .team-member-photo-link {
     display: block;
-    line-height: 0; /* Removes extra space below image */
+    line-height: 0;
 }
 
 /* Στυλ για την φωτογραφία του μέλους */
 .team-member-photo {
-    width: 100%; /* Image takes available width in its container */
-    max-width: 150px; /* Maximum width for the image */
-    height: auto; /* Maintains aspect ratio */
-    object-fit: contain; /* Ensures image fits without cropping */
-    border: none;
-    box-shadow: none;
-    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    object-fit: contain;
+    border: 3px solid rgba(255, 255, 255, 0.6); /* Ελαφρύ περίγραμμα για τις φωτογραφίες */
+    border-radius: 50%; /* Κυκλικές φωτογραφίες */
+    box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.4); /* Φωτεινή σκίαση */
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 /* Μεγένθυνση της φωτογραφίας στο hover */
 .team-member-photo-link:hover .team-member-photo {
-    transform: scale(1.1); /* Zoom in 10% */
-    filter: brightness(1.2); /* Make 20% brighter on hover */
+    transform: scale(1.1);
+    filter: brightness(1.2);
+    box-shadow: 0px 0px 25px rgba(0, 255, 255, 0.8); /* Πιο έντονη σκίαση στο hover */
 }
 
 /* Ρυθμίσεις για τα εικονίδια */
 .MuiIconButton-root {
-    margin: 0 5px;
+    margin: 0 8px; /* Slightly more space for icons */
+    color: white; /* Ensure icons are white */
 }
+
+/* Προσθήκη στυλ για το "Course Information" heading */
+.course-info-heading {
+    color: rgb(255, 255, 255);
+    font-family: 'Genos', sans-serif;
+    font-size: 36px;
+    text-shadow: 2px 2px 4px rgb(0, 0, 0);
+    margin-top: 60px; /* Add space above this section */
+    margin-bottom: 20px;
+}
+
+/* Στυλ για το κείμενο πληροφοριών μαθήματος */
+.course-info-text {
+    color: white;
+    font-family: 'Genos', sans-serif;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.course-info-text a {
+    color: #00FFFF; /* Aqua color for links */
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.course-info-text a:hover {
+    color: #00BFFF; /* Lighter blue on hover */
+    text-decoration: underline;
+}
+
 
 /* --- Media Queries for Responsiveness --- */
 
-/* For Tablets and smaller laptops (e.g., screens up to 1024px wide) */
+/* Για οθόνες έως 1200px (μικρότερα desktop, μεγαλύτερα laptops) */
+@media (max-width: 1200px) {
+    .team-modal-content {
+        width: 85%;
+        max-width: 800px;
+        padding: 50px;
+    }
+    .team-modal-content h1 {
+        font-size: 38px;
+    }
+    .team-member-photo {
+        max-width: 140px;
+    }
+    .course-info-heading {
+        font-size: 34px;
+    }
+    .course-info-text {
+        font-size: 20px;
+    }
+}
+
+/* Για Tablets και μικρότερα laptops (π.χ., οθόνες έως 1024px wide) */
 @media (max-width: 1024px) {
     .team-modal-content {
-        width: 85%; /* Broader modal */
-        padding: 60px; /* Reduced padding */
-        top: 100%; /* Move modal higher */
-        transform: translate(-50%, -50%); /* Re-center after top change */
-        min-height: 100vh; /* Ensure it takes at least the viewport height */
+        width: 90%;
+        max-width: 700px;
+        padding: 40px;
+        max-height: 95vh; /* Allow slightly more height */
     }
 
     .team-modal-content h1 {
-        font-size: 36px; /* Slightly smaller font size */
+        font-size: 34px;
+        margin-bottom: 30px;
     }
 
     .team-member-photo {
-        max-width: 120px; /* Smaller photos */
+        max-width: 110px;
+    }
+    .team-member-card p {
+        font-size: 18px;
+    }
+    .MuiIconButton-root {
+        margin: 0 5px;
+    }
+    .course-info-heading {
+        font-size: 30px;
+        margin-top: 40px;
+    }
+    .course-info-text {
+        font-size: 18px;
     }
 }
 
-/* For larger Mobile devices and small Tablets (e.g., screens up to 768px wide) */
+/* Για μεγαλύτερες Mobile συσκευές και μικρά Tablets (π.χ., οθόνες έως 768px wide) */
 @media (max-width: 768px) {
     .team-modal-content {
-        top: 80%; /* Further adjust position to be higher up for smaller screens */
-        width: 90%; /* Take up more width */
-        padding: 40px; /* Further reduce padding */
-        min-height: 90vh; /* Adjust min height */
+        width: 95%;
+        max-width: 500px; /* Constrain max width for tablets */
+        padding: 30px;
+        max-height: 98vh; /* Allow even more height */
     }
 
     .team-modal-content h1 {
-        font-size: 30px; /* Even smaller font size */
+        font-size: 28px;
+        margin-bottom: 25px;
     }
 
     .team-member-photo {
-        max-width: 100px; /* Smaller photos for mobile */
+        max-width: 90px;
     }
-
-    .team-member-card {
-        padding: 15px; /* Slightly reduce card padding */
+    .team-member-card p {
+        font-size: 16px;
+    }
+    .course-info-heading {
+        font-size: 26px;
+        margin-top: 30px;
+    }
+    .course-info-text {
+        font-size: 16px;
     }
 }
 
-/* For Mobile devices (e.g., screens up to 480px wide) */
+/* Για Mobile συσκευές (π.χ., οθόνες έως 480px wide) */
 @media (max-width: 480px) {
     .team-modal-content {
-        top: 60%; /* Even higher position to prevent being cut off */
-        width: 95%; /* Almost full width */
-        padding: 20px; /* Minimal padding */
-        min-height: 80vh; /* Adjust min height for very small screens */
+        width: 98%; /* Almost full width on very small screens */
+        padding: 20px 10px; /* Smaller horizontal padding */
+        max-height: 98vh; /* Maximize vertical space */
+        left: 50%; /* Ensure it's centered */
+        transform: translate(-50%, -50%); /* Re-center */
     }
 
     .team-modal-content h1 {
-        font-size: 24px; /* Smallest font size for mobile headings */
-    }
-
-    .team-member-card {
-        padding: 10px; /* Reduce card padding further */
+        font-size: 22px;
+        margin-bottom: 20px;
     }
 
     .team-member-photo {
-        max-width: 80px; /* Smallest photo size for mobile */
+        max-width: 70px;
     }
-
+    .team-member-card p {
+        font-size: 14px;
+    }
     .MuiIconButton-root {
-        margin: 0 2px; /* Smaller margins for icons */
+        margin: 0 2px;
+        font-size: 18px; /* Possibly smaller icon size if needed */
+    }
+    .course-info-heading {
+        font-size: 22px;
+        margin-top: 20px;
+    }
+    .course-info-text {
+        font-size: 14px;
     }
 }
