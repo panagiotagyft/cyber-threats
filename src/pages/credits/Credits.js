@@ -30,7 +30,6 @@ const creditsList = [
     content: [
       { name: 'React', href: 'https://react.dev', license: 'MIT License' },
       { name: 'Tailwind CSS', href: 'https://tailwindcss.com', license: 'MIT License (e.g., via GitHub)' },
-      { name: 'Tailwind Plus', href: 'https://www.tailwindplus.com', license: 'Personal/Team commercial license' },
       { name: 'Material UI (core)', href: 'https://mui.com', license: 'MIT License' },
       { name: 'MUI X (Pro/Premium)', href: 'https://mui.com/x/', license: 'Requires commercial license' },
     ],

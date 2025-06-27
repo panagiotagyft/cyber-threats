@@ -7,6 +7,7 @@ import './App.css';
 import NavigationBar from './components/navbar/NavigationBar';
 import Visualization from "./pages/visualization/Visualization";
 import ScrollytellingPage from "./pages/scrollytelling/ScrollytellingPage";
+import Presentation from "./pages/presentation/Presentation";
 import SocialSidebar from './components/sidebar/Sidebar';
 
 function App() {
@@ -24,7 +25,7 @@ function App() {
           <Route path="/visualization" element={<Visualization />} />
           <Route path="/scrollytelling" element={<ScrollytellingPage />} />
           <Route path="/credits" element={<Credits />} />
-
+          <Route path="/presentation" element={<Presentation />} />
           {/* Fallback για κάθε άλλο path */}
           <Route path="*" element={<Home />} />
         </Routes>

@@ -21,48 +21,52 @@ export default function Visualization() {
     <div className="viz-container">
 
       <div className="title-contenair-viz">
-        <h2 className="viz-title0">Visualization</h2>
+        <h1 className="viz-title0">Visualization</h1>
       </div>
 
       <div className="text-content-ins">
-    
+        
         <p>This interactive cybersecurity dashboard examines the evolution and global distribution of cyber threats between 2015 and 2024. It provides a data-driven analysis of how different types of cyberattacks impact critical industries, countries and users, and how defense mechanisms influence the time required to resolve incidents. The dataset powering the dashboard originates from publicly recognized frameworks and threat intelligence sources, such as the Verizon DBIR, ENISA Threat Landscape Reports, and the MITRE ATT&CK Framework.</p>
         <p>The visualization focuses on selected countries with strategic digital ecosystems: Japan, China, Russia, the United States, Brazil, the United Kingdom, France, Germany, Australia, and India. These nations represent diverse threat exposure profiles, regulatory responses and cybersecurity maturity levels.</p>
-        <p>The dashboard consists of 2 filters and 3 interconnected visual elements:
-            1.	A dynamic Year filter (slider format) located at the top-right of the dashboard allows users to adjust the time window of analysis through sliding or selecting specific years between 2015 and 2024. In this way, users can examine how cyber threats, incident response times, and affected sectors have evolved over time.
-            2.	Cyber Threat Categories (Top Navigation Bar-Filter):
-            The dashboard begins by highlighting six primary cyber threats: Distributed Denial of Service (DDoS), Malware, Man-in-the-Middle (MiTM), Phishing, Ransomware, and SQL Injection. These categories are aligned with definitions and classifications drawn from ENISA’s Threat Landscape Reports and the MITRE ATT&CK Framework, ensuring taxonomic consistency and technical validity.
-            By allowing users to toggle between different threat types, the dashboard supports multidimensional analysis, enabling exploration of how each attack vector propagates, which systems or sectors it targets, and how response mechanisms differ accordingly. This design enhances the user's situational awareness and supports cross-threat comparison within a unified analytical framework, a feature commonly employed in cyber threat intelligence platforms.
-        </p>
-        
-        <p>Let us briefly explore the significance of each major cyber threat:</p>
-        <p>Distributed Denial of Service
-            A DDoS attack overwhelms a network, server, or online service with a flood of internet traffic, rendering it unavailable to legitimate users. These attacks typically originate from large networks of compromised devices (botnets).
-            Malware is an overarching term used to describe any software or firmware intended to perform an unauthorised process that will have an adverse impact on the confidentiality, integrity or availability of a system.
-            MITM (Man-in-the-Middle)
-            A MITM attack occurs when an attacker intercepts and potentially alters communications between two parties without their knowledge. It targets data confidentiality and can be used for credential theft or manipulation of transactions.
-            Phishing
-            Phishing involves deceptive emails or messages that trick users into revealing sensitive information, such as passwords or financial data. It often impersonates trusted entities to exploit human error rather than technical flaws.
+      </div>
+      <div className="text-content-ins">  
+          <h2>Dashboard Features</h2>
 
-            Ransomware
-            According to ENISA’s Threat Landscape for Ransomware Attacks5 report, ransomware is defined as a type of attack where threat actors take control of a target’s assets and demand a ransom in exchange for the return of the asset’s availability or in exchange for publicly exposing the target’s data.
-            SQL Injection
-            SQL Injection is a code injection technique that exploits vulnerabilities in web applications by inserting malicious SQL queries. It allows attackers to access, manipulate, or delete data from the backend database.
-        </p>
-        <p>A. A.	Total Time Required for Incident Resolution by Defence Type (Bar Chart):
-          The bar chart on the left visualizes the aggregated time (in hours) required to resolve cybersecurity incidents, categorized by the type of defense mechanism deployed. These mechanisms include AI-based detection systems, traditional antivirus software, encryption protocols, firewall infrastructures, and VPN technologies.
-          This component enables a comparative evaluation of operational response efficiency, offering insights into how different defense approaches perform in real-world mitigation scenarios. The visualization allows stakeholders, such as SOC teams, CISOs and policy analysts, to identify which strategies may offer quicker containment under specific threat conditions.
-          The data stems from a synthesis of incident timelines as recorded in public cybersecurity incident reports and empirical datasets, including the Verizon Data Breach Investigations Report (DBIR) and ENISA's Threat Landscape series (2015–2024).
-        </p>
-        <p>B. Cyberattack Targets: Industries with the Most Impacted Users (Treemap):
-        The treemap at the center of the dashboard reveals which industries have experienced the highest number of affected users as a result of cyberattacks. These include sectors like IT, banking, healthcare, education, government, retail, and telecommunications.
-        What makes these sectors especially vulnerable is not only the volume of data they manage, but also the level of digital interdependence that characterizes their day-to-day operations. A single breach in any of these domains can cascade across entire systems, disrupting services and undermining trust.
-        The data behind this visualization supports risk modeling efforts and aligns closely with findings from ENISA’s Sectoral Threat Landscape and the OECD’s Digital Economy Outlook, both of which emphasize the growing exposure of data-centric and service-heavy industries to cyber threats.
-        </p>
-        <p>C. C.	Most Affected Countries by Number of Attacked Users (Map):
-        The interactive world map visualizes the geopolitical distribution of cyberattacks based on the volume of affected users per country. A heatmap gradient communicates intensity, helping identify national ecosystems with substantial digital risk exposure. The map centers on countries with advanced digital economies and cyber-relevant infrastructures, including the United States, China, India, Russia, Germany, the United Kingdom, France, Japan, Australia and Brazil.
-        This geographic component draws upon aggregated threat intelligence sources and global incident databases, and it allows the user to explore correlations between national cybersecurity maturity, digital dependency, and threat volume. The map aids in comparative cyber risk assessment and contributes to global situational awareness, in line with methodologies seen in ITU’s Global Cybersecurity Index and OECD’s Global Forum on Digital Security for Prosperity.
-        </p>
+          <p>Our dashboard is designed for insightful analysis, featuring two dynamic filters and three interconnected visual elements:</p>
+
+          <h3>1. Dynamic Year Filter (Slider Format)</h3>
+          <p>Located at the top-right, this slider allows you to adjust the analysis time window from 2015 to 2024. Easily explore how cyber threats, incident response times, and affected sectors have evolved over the years.</p>
+
+          <h3>2. Cyber Threat Categories (Top Navigation Bar)</h3>
+          <p>The dashboard highlights six primary cyber threats: Distributed Denial of Service (DDoS), Malware, Man-in-the-Middle (MiTM), Phishing, Ransomware, and SQL Injection. These categories align with definitions from ENISA's Threat Landscape Reports and the MITRE ATT&CK Framework, ensuring consistent and technically valid classifications.</p>
+          <p>By toggling between these threat types, you can conduct multidimensional analysis, exploring how each attack vector propagates, which systems or sectors it targets, and how response mechanisms differ. This design enhances situational awareness and supports cross-threat comparison, a key feature in advanced cyber threat intelligence platforms.</p>
+
+      </div>
+      <div className="text-content-ins">
+        <h2>Understanding Key Cyber Threats</h2>
+
+        <p>Let's briefly explore the significance of each major cyber threat:</p>
+
+        <ul>
+          <li><strong>Distributed Denial of Service (DDoS):</strong> Overwhelms a network, server, or online service with a flood of internet traffic, rendering it unavailable to legitimate users. These attacks typically originate from large networks of compromised devices (botnets).</li>
+          <li><strong>Malware:</strong> An overarching term for any software or firmware designed to perform unauthorized processes that negatively impact a system's confidentiality, integrity, or availability.</li>
+          <li><strong>Man-in-the-Middle (MiTM):</strong> An attack where an adversary intercepts and potentially alters communications between two parties without their knowledge. It primarily targets data confidentiality and can be used for credential theft or transaction manipulation.</li>
+          <li><strong>Phishing:</strong> Involves deceptive emails or messages that trick users into revealing sensitive information like passwords or financial data. It often impersonates trusted entities, exploiting human error rather than technical flaws.</li>
+          <li><strong>Ransomware:</strong> As defined by ENISA, this attack involves threat actors taking control of a target’s assets and demanding a ransom for their return or for not publicly exposing the target’s data.</li>
+          <li><strong>SQL Injection:</strong> A code injection technique that exploits vulnerabilities in web applications by inserting malicious SQL queries. This allows attackers to access, manipulate, or delete data from the backend database.</li>
+        </ul>
+      </div>
+      <div className="text-content-ins">
+        <h2>Interconnected Visual Elements</h2>
+
+          <h3>A. Total Time Required for Incident Resolution by Defense Type (Bar Chart)</h3>
+          <p>This bar chart visualizes the aggregated time (in hours) needed to resolve cybersecurity incidents, broken down by the type of defense mechanism used. These mechanisms include AI-based detection, traditional antivirus, encryption protocols, firewall infrastructures, and VPN technologies. This component allows for a comparative evaluation of operational response efficiency, revealing which strategies offer quicker containment under specific threat conditions. Data is synthesized from public cybersecurity incident reports and empirical datasets, including the Verizon Data Breach Investigations Report (DBIR) and ENISA's Threat Landscape series (2015–2024).</p>
+
+          <h3>B. Cyberattack Targets: Industries with the Most Impacted Users (Treemap)</h3>
+          <p>The treemap in the center of the dashboard highlights industries with the highest number of affected users from cyberattacks, including IT, banking, healthcare, education, government, retail, and telecommunications. These sectors are particularly vulnerable due to both the volume of data they manage and their high level of digital interdependence. A single breach can have cascading effects, disrupting services and eroding trust. This visualization supports risk modeling efforts and aligns with findings from ENISA's Sectoral Threat Landscape and the OECD's Digital Economy Outlook.</p>
+
+          <h3>C. Most Affected Countries by Number of Attacked Users (Map)</h3>
+          <p>The interactive world map visualizes the geopolitical distribution of cyberattacks based on the volume of affected users per country. A heatmap gradient indicates intensity, helping identify national ecosystems with significant digital risk exposure. The map focuses on the ten selected countries with advanced digital economies and cyber-relevant infrastructures. This geographic component draws on aggregated threat intelligence sources and global incident databases, allowing users to explore correlations between national cybersecurity maturity, digital dependency, and threat volume. It aids in comparative cyber risk assessment and contributes to global situational awareness, in line with methodologies from ITU's Global Cybersecurity Index and OECD's Global Forum on Digital Security for Prosperity.</p>
       </div>
 
       {showInfoBox && (
