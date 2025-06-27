@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import './Presentation.css';
 
 const images = [
-  '/assets/team_photos/rigas.png',
-  '/assets/team_photos/panagiota.png',
-  '/assets/team_photos/panagiotis.png',
+  process.env.PUBLIC_URL + '/assets/team_photos/rigas.png',
+  process.env.PUBLIC_URL + '/assets/team_photos/panagiota.png',
+  process.env.PUBLIC_URL + '/assets/team_photos/panagiotis.png',
 ];
 
 export default function Presentation() {
