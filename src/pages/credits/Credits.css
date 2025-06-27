@@ -1,42 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Genos&display=swap');
 
-/* Διαφανές background για το Modal */
+/* Default styles (for larger screens - Desktop, large Laptops) */
+/* These styles apply unless a more specific media query overrides them. */
+
 .team-modal-backdrop .MuiBackdrop-root {
     height: 180vh;
     z-index: 20;
-    /* 50% διαφάνεια */
+    /* 50% διαφάνεια - This comment was in your original, if you want actual transparency you need background-color: rgba(0,0,0,0.5); */
 }
 
 .team-modal-content h1 {
     color: rgb(255, 255, 255);
-    /* Ορίζουμε το χρώμα των ονομάτων σε λευκό */
     font-family: 'Genos', sans-serif;
     font-size: 40px;
-    /* Ορίζουμε το μέγεθος γραμματοσειράς σε xx-large */
     text-shadow: 2px 2px 4px rgb(0, 0, 0);
-    /* Προσθήκη σκίασης κειμένου */
-    /* Εφαρμόζουμε τη γραμματοσειρά Genos */
 }
 
 /* Στυλ για το περιεχόμενο του Modal */
 .team-modal-content {
     position: absolute;
-    top: 140%;
+    top: 140%; /* Might be too low for some screens, adjusted in media queries */
     left: 50%;
     transform: translate(-50%, -50%);
-    /* background-color: rgba(255, 255, 255, 0.3); */
-    /* Ελαφρώς πιο διαφανές λευκό */
+    /* background-color: rgba(255, 255, 255, 0.3); */ /* Uncomment if you want a translucent background for the modal itself */
     border-radius: 8px;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
     padding: 100px;
     width: 70%;
-    /* Κρατάμε το πλάτος, αλλά θα το κάνουμε πιο responsive */
     max-width: 1000px;
-    min-height: 150vh;
-    max-height: 5000vh;
+    min-height: 150vh; /* Adjusts minimum height based on viewport, might be large */
+    max-height: 5000vh; /* Very large max height, usually not problematic if overflow is handled */
     text-align: center;
-    /* overflow-y: auto; */
-    /* Προσθήκη scroll αν το περιεχόμενο είναι πολύ μεγάλο */
+    overflow-y: auto; /* <-- **Πολύ Σημαντικό!** Προσθήκη scroll αν το περιεχόμενο είναι πολύ μεγάλο */
 }
 
 /* Στυλ για την κάρτα του μέλους της ομάδας */
@@ -45,49 +40,39 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* Κεντράρει τα στοιχεία κάθετης στοίχισης */
     padding: 20px;
     border-radius: 8px;
     transition: transform 0.3s ease-in-out;
-    height: 100%;
+    height: 100%; /* Ensures the card takes full available height */
 }
 
 /* Στυλ για τα ονόματα των μελών της ομάδας (το `<p>` tag από το Typography) */
 .team-member-card p {
     color: white;
-    /* Ορίζουμε το χρώρο των ονομάτων σε λευκό */
     font-family: 'Genos', sans-serif;
-    /* Εφαρμόζουμε τη γραμματοσειρά Genos */
 }
 
 /* Στυλ για τον σύνδεσμο της φωτογραφίας */
 .team-member-photo-link {
     display: block;
-    line-height: 0;
+    line-height: 0; /* Removes extra space below image */
 }
 
 /* Στυλ για την φωτογραφία του μέλους */
 .team-member-photo {
-    width: 100%;
-    /* Η εικόνα καταλαμβάνει το διαθέσιμο πλάτος */
-    max-width: 150px;
-    /* Μέγιστο πλάτος για την εικόνα */
-    height: auto;
-    /* Διατηρεί την αναλογία διαστάσεων */
-    object-fit: contain;
-    /* Διασφαλίζει ότι η εικόνα δεν θα κοπεί και θα είναι ολόκληρη μέσα στο πλαίσιο */
+    width: 100%; /* Image takes available width in its container */
+    max-width: 150px; /* Maximum width for the image */
+    height: auto; /* Maintains aspect ratio */
+    object-fit: contain; /* Ensures image fits without cropping */
     border: none;
     box-shadow: none;
     transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
-    /* Επανενεργοποιούμε το transition για το hover και προσθέτουμε το filter */
 }
 
 /* Μεγένθυνση της φωτογραφίας στο hover */
 .team-member-photo-link:hover .team-member-photo {
-    transform: scale(1.1);
-    /* Μεγένθυνση 10% */
-    filter: brightness(1.2);
-    /* Κάνει την εικόνα 20% πιο φωτεινή στο hover */
+    transform: scale(1.1); /* Zoom in 10% */
+    filter: brightness(1.2); /* Make 20% brighter on hover */
 }
 
 /* Ρυθμίσεις για τα εικονίδια */
@@ -95,13 +80,16 @@
     margin: 0 5px;
 }
 
-/* --- Media Queries --- */
+/* --- Media Queries for Responsiveness --- */
 
 /* For Tablets and smaller laptops (e.g., screens up to 1024px wide) */
 @media (max-width: 1024px) {
     .team-modal-content {
-        width: 85%; /* Increase width for more space */
-        padding: 60px; /* Reduce padding */
+        width: 85%; /* Broader modal */
+        padding: 60px; /* Reduced padding */
+        top: 100%; /* Move modal higher */
+        transform: translate(-50%, -50%); /* Re-center after top change */
+        min-height: 100vh; /* Ensure it takes at least the viewport height */
     }
 
     .team-modal-content h1 {
@@ -116,10 +104,10 @@
 /* For larger Mobile devices and small Tablets (e.g., screens up to 768px wide) */
 @media (max-width: 768px) {
     .team-modal-content {
-        top: 100%; /* Adjust position to be higher up for smaller screens */
+        top: 80%; /* Further adjust position to be higher up for smaller screens */
         width: 90%; /* Take up more width */
         padding: 40px; /* Further reduce padding */
-        min-height: 100vh; /* Make sure it takes at least the viewport height */
+        min-height: 90vh; /* Adjust min height */
     }
 
     .team-modal-content h1 {
@@ -129,14 +117,19 @@
     .team-member-photo {
         max-width: 100px; /* Smaller photos for mobile */
     }
+
+    .team-member-card {
+        padding: 15px; /* Slightly reduce card padding */
+    }
 }
 
 /* For Mobile devices (e.g., screens up to 480px wide) */
 @media (max-width: 480px) {
     .team-modal-content {
-        top: 80%; /* Even higher position */
+        top: 60%; /* Even higher position to prevent being cut off */
         width: 95%; /* Almost full width */
         padding: 20px; /* Minimal padding */
+        min-height: 80vh; /* Adjust min height for very small screens */
     }
 
     .team-modal-content h1 {
@@ -144,7 +137,7 @@
     }
 
     .team-member-card {
-        padding: 10px; /* Reduce card padding */
+        padding: 10px; /* Reduce card padding further */
     }
 
     .team-member-photo {
