@@ -43,7 +43,7 @@ export default function Presentation() {
           <iframe
             width="560"
             height="315"
-            src="https://youtu.be/do7s8JXCQ-Y?si=PaOkcCuXeUk2HX-W"
+            src="https://www.youtube.com/embed/do7s8JXCQ-Y"
             title="YouTube video"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
