@@ -199,7 +199,6 @@
   background-color: #eee;
 }
 
-/* Το container του link πρέπει να παίρνει events */
 .viz-source {
   position: relative;
   z-index: 200;       /* πάνω από το iframe */
@@ -211,12 +210,18 @@
   color: #ccc;
   text-align: left;
   box-sizing: border-box;
-  margin-top:-150px;
+  margin-top:-220px;
 }
 
 /* Το ίδιο το <a> */
 .viz-source a {
-  color: #ccc;
+  color: #007bff;;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.viz-source span {
+  color: #cccccc;
   text-decoration: none;
   cursor: pointer;
 }

@@ -99,6 +99,7 @@ export default function Visualization() {
       </div> 
 
       <p className="viz-source">
+        <span>Source: </span>
         <a
           href="https://www.kaggle.com/datasets/atharvasoundankar/global-cybersecurity-threats-2015-2024"
           target="_blank"
