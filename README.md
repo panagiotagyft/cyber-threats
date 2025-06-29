@@ -2,9 +2,9 @@
 
 **Design Team:**
 
-* Panagiota Gyftou
-* Reginos Vasileiou
-* Panagiotis Fasoulidis
+- [Panagiota Gyftou](https://github.com/panagiotagyft)
+- [Reginos Vasileiou](https://github.com/rigas2k19)
+- [Panagiotis Fasoulidis](https://github.com/panafaso)
 
 This site was developed as part of the **Data Visualization** course taught by Professor Maria Roussou. Below is a brief overview of its main sections and features.
 
