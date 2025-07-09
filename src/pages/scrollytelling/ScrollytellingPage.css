@@ -151,8 +151,16 @@ body {
   border-radius: 10px !important;
   padding: 15px !important;
   color: white !important;
-  pointer-events: none;
+  pointer-events: auto;
   max-height: 400px;
   overflow-y: auto;
   z-index: 1000;
+}
+#info-box a {
+  color: #428fdb; /* Light blue */
+  text-decoration: underline;
+  cursor: pointer;
+}
+#info-box a:hover {
+  color: #82cfff; /* Even lighter blue on hover */
 }

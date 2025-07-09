@@ -1,22 +1,18 @@
-// import React, { useContext } from "react";
 import "./NavigationBar.css";
 import { Navbar, Nav, Container } from "react-bootstrap";
-import { Link } from "react-router-dom";
-// import { LanguageContext } from "../../context/LanguageContext";
+import { NavLink } from "react-router-dom";
 
 const NavigationBar = () => {
-//   const { language, toggleLanguage, translations } = useContext(LanguageContext);
-
   return (
     <Navbar expand="lg" fixed="top" className="custom-navbar">
       <Container className="navbar-container">
         <Nav className="navbar-nav">
-          <Nav.Link as={Link} to="/" className="special-link">Cyber-Threats</Nav.Link>
-          <Nav.Link as={Link} to="/" className="nav-link">Home</Nav.Link>
-          <Nav.Link as={Link} to="/visualization" className="nav-link">Visualization</Nav.Link>
-          <Nav.Link as={Link} to="/scrollytelling" className="nav-link">Scrollytelling</Nav.Link>
-          <Nav.Link as={Link} to="/presentation" className="nav-link">Presentation</Nav.Link>
-          <Nav.Link as={Link} to="/credits" className="nav-link">Credits</Nav.Link>
+          <NavLink to="/" className="nav-link special-link">Cyber-Threats</NavLink>
+          <NavLink to="/" end className="nav-link">Home</NavLink>
+          <NavLink to="/visualization" className="nav-link">Visualization</NavLink>
+          <NavLink to="/scrollytelling" className="nav-link">Scrollytelling</NavLink>
+          <NavLink to="/presentation" className="nav-link">Presentation</NavLink>
+          <NavLink to="/credits" className="nav-link">Credits</NavLink>
         </Nav>
       </Container>
     </Navbar>
