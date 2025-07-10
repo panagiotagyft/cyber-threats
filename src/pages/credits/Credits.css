@@ -1,140 +1,99 @@
 @import url('https://fonts.googleapis.com/css2?family=Genos&display=swap');
 
-/* Διαφανές background για το Modal */
+/* Credits: Στυλ για το modal και τις κάρτες των μελών της ομάδας */
+
+/* ----------------------------------------
+   Στυλ για το Backdrop (Φόντο) του Modal
+   ---------------------------------------- */
 .team-modal-backdrop .MuiBackdrop-root {
-    /* background-color: rgba(0, 0, 0, 0.5); */
-    z-index: 20;
-    /* 50% διαφάνεια */
-}
-
-.team-modal-content h1 {
-    color: rgb(255, 255, 255);
-    /* Ορίζουμε το χρώμα των ονομάτων σε λευκό */
-    font-family: 'Genos', sans-serif;
-    font-size: 40px;
-    /* Ορίζουμε το μέγεθος γραμματοσειράς σε xx-large */
-    text-shadow: 2px 2px 4px rgb(0, 0, 0);
-    /* Προσθήκη σκίασης κειμένου */
-    /* Εφαρμόζουμε τη γραμματοσειρά Genos */
-}
-
-/* Στυλ για το περιεχόμενο του Modal */
-.team-modal-content {
-    position: absolute;
-    top: 150%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    /* background-color: rgba(255, 255, 255, 0.3); */
-    /* Ελαφρώς πιο διαφανές λευκό */
-    border-radius: 8px;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-    padding: 100px;
-    width: 70%;
-    /* Κρατάμε το πλάτος, αλλά θα το κάνουμε πιο responsive */
-    max-width: 1000px;
-    /* Προσθήκη μέγιστου πλάτους για μεγαλύτερες οθόνες */
-    max-height: 5000vh;
-    text-align: center;
-    /* overflow-y: auto; */
-    /* Προσθήκη scroll αν το περιεχόμενο είναι πολύ μεγάλο */
-}
-
-/* Στυλ για την κάρτα του μέλους της ομάδας */
-.team-member-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    /* Κεντράρει τα στοιχεία κάθετης στοίχισης */
-    padding: 20px;
-    border-radius: 8px;
-    transition: transform 0.3s ease-in-out;
-    height: 100%;
-}
-
-/* Στυλ για τα ονόματα των μελών της ομάδας (το `<p>` tag από το Typography) */
-.team-member-card p {
-    color: white;
-    /* Ορίζουμε το χρώρο των ονομάτων σε λευκό */
-    font-family: 'Genos', sans-serif;
-    /* Εφαρμόζουμε τη γραμματοσειρά Genos */
-}
-
-/* Στυλ για τον σύνδεσμο της φωτογραφίας */
-.team-member-photo-link {
-    display: block;
-    line-height: 0;
-}
-
-/* Στυλ για την φωτογραφία του μέλους */
-.team-member-photo {
-    width: 100%;
-    /* Η εικόνα καταλαμβάνει το διαθέσιμο πλάτος */
-    max-width: 150px;
-    /* Μέγιστο πλάτος για την εικόνα */
-    height: auto;
-    /* Διατηρεί την αναλογία διαστάσεων */
-    object-fit: contain;
-    /* Διασφαλίζει ότι η εικόνα δεν θα κοπεί και θα είναι ολόκληρη μέσα στο πλαίσιο */
-    border: none;
-    box-shadow: none;
-    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
-    /* Επανενεργοποιούμε το transition για το hover και προσθέτουμε το filter */
-}
-
-/* Μεγένθυνση της φωτογραφίας στο hover */
-.team-member-photo-link:hover .team-member-photo {
-    transform: scale(1.1);
-    /* Μεγένθυνση 10% */
-    filter: brightness(1.2);
-    /* Κάνει την εικόνα 20% πιο φωτεινή στο hover */
-}
-
-/* Ρυθμίσεις για τα εικονίδια */
-.MuiIconButton-root {
-    margin: 0 5px;
+    /* Εδώ μπορεί να οριστεί ένα διαφανές χρώμα φόντου, αν χρειάζεται. */
+    /* background-color: rgba(0, 0, 0, 0.5); */ /* Προαιρετικό: απενεργοποιημένο, αλλά μπορεί να ενεργοποιηθεί για ημιδιαφανές μαύρο φόντο */
+    z-index: 20; /* Ορίζει το βάθος στοίβαξης για να είναι πάνω από άλλα στοιχεία, αλλά κάτω από το modal content. */
 }
 
 /* ----------------------------------------
-   Media Queries (mobile-first approach)
+   Στυλ για τον Κύριο Τίτλο (H1) μέσα στο Modal
    ---------------------------------------- */
-
-/* From 585px and up */
-@media (min-width: 585px) {
-    .team-modal-content {
-        width: 90%;
-        padding: 24px;
-    }
+.team-modal-content h1 {
+    color: rgb(255, 255, 255); /* Χρώμα γραμματοσειράς: Λευκό */
+    font-family: 'Genos', sans-serif; /* Εφαρμόζει τη γραμματοσειρά Genos */
+    font-size: 40px; /* Μέγεθος γραμματοσειράς: 40px */
+    text-shadow: 2px 2px 4px rgb(0, 0, 0); /* Προσθέτει σκιά στο κείμενο για καλύτερη αναγνωσιμότητα (μαύρη σκιά) */
 }
 
-/* Μεγαλύτερα tablets / μικρά laptop */
-@media (min-width: 768px) {
-  .team-modal-content {
-    width: 80%;
-    padding: 40px;
-  }
+/* ----------------------------------------
+   Στυλ για το Κύριο Περιεχόμενο του Modal
+   ---------------------------------------- */
+.team-modal-content {
+    position: absolute; /* Τοποθετεί το modal σχετικά με τον πλησιέστερο τοποθετημένο γονέα */
+    top: 900px; /* Αρχική τοποθέτηση από την κορυφή (θα μετατοπιστεί με το transform) */
+    left: 50%; /* Αρχική τοποθέτηση από τα αριστερά (θα μετατοπιστεί με το transform) */
+    transform: translate(-50%, -50%); /* Κεντράρει το modal οριζόντια και κάθετα στην οθόνη */
+    /* background-color: rgba(255, 255, 255, 0.3); */ /* Προαιρετικό: Ελαφρώς διαφανές λευκό φόντο για το modal content */
+    border-radius: 8px; /* Στρογγυλεμένες γωνίες */
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); /* Διακριτική σκιά κουτιού */
+    padding: 100px; /* Εσωτερική απόσταση από το περιεχόμενο */
+    width: 70%; /* Πλάτος του modal: 70% του γονέα του */
+    max-width: 1000px; /* Μέγιστο πλάτος για το modal σε μεγαλύτερες οθόνες */
+    max-height: 5000vh; /* Μέγιστο ύψος (πολύ μεγάλο, ίσως για να μην υπάρχει περιορισμός) */
+    text-align: center; /* Κεντράρει το κείμενο μέσα στο modal */
+    /* overflow-y: auto; */ /* Προαιρετικό: Προσθέτει scrollbar αν το περιεχόμενο υπερβαίνει το ύψος */
 }
 
-/* Full desktop */
-@media (min-width: 992px) {
-  .team-modal-content {
-    width: 70%;
-    padding: 100px;
-  }
+/* ----------------------------------------
+   Στυλ για την Κάρτα Κάθε Μέλους της Ομάδας
+   ---------------------------------------- */
+.team-member-card {
+    display: flex; /* Χρησιμοποιεί Flexbox για διάταξη των στοιχείων */
+    flex-direction: column; /* Τα στοιχεία στοιχίζονται σε στήλη */
+    align-items: center; /* Κεντράρει τα στοιχεία οριζόντια */
+    justify-content: center; /* Κεντράρει τα στοιχεία κάθετα */
+    padding: 20px; /* Εσωτερική απόσταση στην κάρτα */
+    border-radius: 8px; /* Στρογγυλεμένες γωνίες */
+    transition: transform 0.3s ease-in-out; /* Ομαλή μετάβαση για μετασχηματισμούς (π.χ. hover) */
+    height: 100%; /* Η κάρτα καταλαμβάνει το 100% του διαθέσιμου ύψους */
 }
 
-/* From 768px up to 1343px */
-@media (min-width: 768px) and (max-width: 1343px) {
-    .team-modal-content {
-        width: 90%;
-        padding: 20px;
-    }
+/* ----------------------------------------
+   Στυλ για τα Ονόματα των Μελών της Ομάδας (εντός <p> tag)
+   ---------------------------------------- */
+.team-member-card p {
+    color: white; /* Χρώμα γραμματοσειράς: Λευκό */
+    font-family: 'Genos', sans-serif; /* Εφαρμόζει τη γραμματοσειρά Genos */
 }
 
-/* From 1344px and up */
-@media (min-width: 1344px) {
-    .team-modal-content {
-        width: 90%;
-        padding: 20px;
-    }
+/* ----------------------------------------
+   Στυλ για τον Σύνδεσμο της Φωτογραφίας του Μέλους
+   ---------------------------------------- */
+.team-member-photo-link {
+    display: block; /* Το κάνει block στοιχείο για να καταλαμβάνει όλο το διαθέσιμο πλάτος */
+    line-height: 0; /* Αφαιρεί τυχόν κενά κάτω από την εικόνα */
+}
+
+/* ----------------------------------------
+   Στυλ για την Φωτογραφία του Μέλους της Ομάδας
+   ---------------------------------------- */
+.team-member-photo {
+    width: 100%; /* Η εικόνα καταλαμβάνει το διαθέσιμο πλάτος της κάρτας */
+    max-width: 150px; /* Μέγιστο πλάτος για την εικόνα (την περιορίζει) */
+    height: auto; /* Διατηρεί την αναλογία διαστάσεων της εικόνας */
+    object-fit: contain; /* Διασφαλίζει ότι ολόκληρη η εικόνα θα είναι ορατή μέσα στο πλαίσιο, χωρίς να κοπεί */
+    border: none; /* Δεν έχει περίγραμμα */
+    box-shadow: none; /* Δεν έχει σκιά κουτιού */
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out; /* Ομαλή μετάβαση για μεγέθυνση και φωτεινότητα στο hover */
+}
+
+/* ----------------------------------------
+   Στυλ για τη Μεγέθυνση της Φωτογραφίας στο Hover
+   ---------------------------------------- */
+.team-member-photo-link:hover .team-member-photo {
+    transform: scale(1.1); /* Μεγέθυνση της εικόνας κατά 10% στο hover */
+    filter: brightness(1.2); /* Κάνει την εικόνα 20% πιο φωτεινή στο hover */
+}
+
+/* ----------------------------------------
+   Στυλ για τα Εικονίδια (π.χ. social media icons)
+   ---------------------------------------- */
+.MuiIconButton-root {
+    margin: 0 5px; /* Προσθέτει οριζόντιο περιθώριο 5px μεταξύ των εικονιδίων */
 }
