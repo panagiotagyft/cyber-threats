@@ -6,7 +6,7 @@ import './Visualization.css';
 export default function Visualization() {
   const dashboardUrl = 'https://public.tableau.com/views/CyberSecurityViz_updated2/Dashboard1';
   const title = 'Cyber Threats: Defense Mechanisms and Industry Impact (2015-2024)';
-
+  
   const [showInfoBox, setShowInfoBox] = useState(false);
 
   const handleInfoClick = () => {
@@ -75,14 +75,9 @@ export default function Visualization() {
             <button className="close-button" onClick={handleCloseClick}>
               ×
             </button>
-            <h3>Information</h3>
+            <h3>Instructions</h3>
             <p>
-              <p>The left side features a bar chart showing the total incident resolution time (in hours) broken down by defense mechanism: AI‐based detection systems, traditional antivirus software, encryption protocols, firewall infrastructures, and VPN technologies. This comparative view helps SOC teams, CISOs, and policy analysts identify the fastest mitigation strategies.</p>
-
-              <p>In the center, a treemap illustrates the number of affected users by industry: IT, banking, healthcare, education, government, retail, and telecommunications. It highlights how data volume and digital interdependence drive sector vulnerability.</p>
-
-              <p>On the right, an interactive heatmap displays the geographic distribution of attacks by affected‐user count, focusing on Japan, China, India, Russia, Germany, the UK, France, the US, Australia, and Brazil. This supports comparative risk assessment and global situational awareness.</p>
-
+              .......
             </p>
           </div>
         </div>
@@ -95,9 +90,8 @@ export default function Visualization() {
         <div className="tableau">
           <TableauEmbed url={dashboardUrl} />
           <div className="info-icon" onClick={handleInfoClick}>i</div> {/* ΤΩΡΑ ΕΔΩ! */}
-        </div>
-      </div> 
-
+ 
+      
       <p className="viz-source">
         <span>Source: </span>
         <a
@@ -105,10 +99,13 @@ export default function Visualization() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Kaggle Dataset: Global Cybersecurity Threats (2015–2024)
+          Kaggle Dataset: Global Cybersecurity Threats (2015-2024)
         </a>
       </p>
 
+        </div>
+      </div>
+      
     </div>
   );
 }

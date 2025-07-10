@@ -5,24 +5,14 @@
    Visualization container (mobile-first)
    ---------------------------------------- */
 .viz-container {
-  position: relative;
-  z-index: 5;
-  padding-top: 80px;    /* space for header/title */
-  height: 180vh;        /* allow vertical scroll on small screens */
-  color: white;
-  padding-left: 2rem;
-  padding-right: 1rem;
-  box-sizing: border-box;
+  transform-origin: top left;
+  transform: scale(1);
+  width: 100%;
+  transition: transform 0.2s ease;
 }
 
 /* From 585px and up: slightly more top padding, reduce height */
-@media (min-width: 585px) {
-  .viz-container {
-    width: 90%;
-    padding-top: 100px;
-    height: 160vh;
-  }
-}
+
 
 /* From 768px and up: tablet/landscape – further adjustments */
 @media (min-width: 768px) {
@@ -259,14 +249,11 @@
   position: relative;
   z-index: 200;       /* above the iframe */
   pointer-events: auto;
-  max-width: 1200px;
-  margin: 1rem auto;
-  padding-left: 1.5rem;
   font-size: 0.9rem;
   color: #ccc;
   text-align: left;
   box-sizing: border-box;
-  margin-top: -150px;
+  margin-top: 550px;
 }
 
 .viz-source a {
@@ -286,78 +273,11 @@
 }
 
 
-/* Από 585px και πάνω */
-@media (min-width: 585px) {
-  .viz-source {
-    margin-top: -180px;
-  }
-}
-
-/* Από 768px και πάνω */
 @media (min-width: 768px) {
-  .viz-source {
-    margin-top: -150px;
-    left: -50px;
-  }
-}
-
-/* Από 1344px και πάνω */
-@media (min-width: 1344px) {
-  .viz-source {
-    margin-top: -180px;
-  }
-}
-
-@media (min-width: 1600px) {
-  .viz-source {
-    margin-top: -220px;
-  }
-}
-/* Από 1920px και πάνω */
-@media (min-width: 1920px) {
-  .viz-source {
-    margin-top: -240px;
-  }
-}
-
-@media (min-width: 585px) {
-  .tableau {
+  .viz-container {
     width: 95%;
-    max-width: 1100px;
-    margin-bottom: 2.5rem;
-  }
-}
-
-/* From 768px and up: tablets/mικρά laptops */
-@media (min-width: 768px) {
-  .viz-container{
-    left:50px;
-  }
-  .tableau {
-    width: 80%;
-    max-width: 1000px;
-    left:-180px;
-  }
-
-  .info-icon{
-    right: -285px;
-  }
-}
-
-/* From 1344px and up: small desktop */
-@media (min-width: 1344px) {
-  .tableau {
-    width: 85%;
-    max-width: 1400px;
-    margin-bottom: 3.5rem;
-  }
-}
-
-/* From 1920px and up: large desktop */
-@media (min-width: 1920px) {
-  .tableau {
-    width: 80%;
-    max-width: 1600px;
-    margin-bottom: 4rem;
+    padding-top: 120px;
+    height: 140vh;
+    margin: 0 auto; /* Πρόσθεσε αυτό για να το κεντράρεις */
   }
 }
