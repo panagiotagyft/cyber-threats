@@ -1,22 +1,63 @@
 /* src/pages/Visualization/Visualization.css */
 @import url('https://fonts.googleapis.com/css2?family=Genos&display=swap');
 
+/* ----------------------------------------
+   Visualization container (mobile-first)
+   ---------------------------------------- */
 .viz-container {
   position: relative;
   z-index: 5;
-  padding-top: 80px;
-  height: 180vh;
+  padding-top: 80px;    /* space for header/title */
+  height: 180vh;        /* allow vertical scroll on small screens */
   color: white;
   padding-left: 2rem;
   padding-right: 1rem;
   box-sizing: border-box;
 }
 
+/* From 585px and up: slightly more top padding, reduce height */
+@media (min-width: 585px) {
+  .viz-container {
+    width: 90%;
+    padding-top: 100px;
+    height: 160vh;
+  }
+}
+
+/* From 768px and up: tablet/landscape – further adjustments */
+@media (min-width: 768px) {
+  .viz-container {
+    width: 95%;
+    padding-top: 120px;
+    height: 140vh;
+  }
+}
+
+/* From 1344px and up: small desktop – move closer to viewport height */
+@media (min-width: 1344px) {
+  .viz-container {
+    width: 95%;
+    padding-top: 140px;
+    height: 120vh;
+  }
+}
+
+/* From 1920px and up: large desktop – almost full viewport, more padding */
+@media (min-width: 1920px) {
+  .viz-container {
+    width: 95%;
+    padding-top: 160px;
+    height: 100vh;
+  }
+}
+
+/* ----------------------------------------
+   Title container
+   ---------------------------------------- */
 .title-contenair-viz {
     max-width: 500px;
     font-size: 2.5rem;
     text-align: center;
-    text-justify: center;
     margin: 0 auto 2rem auto;
     font-family: 'Genos', sans-serif;
     border: 1px solid rgba(12, 183, 23, 0.792);
@@ -27,10 +68,13 @@
     margin-top: 50px;
 }
 
+/* ----------------------------------------
+   Text content inside container
+   ---------------------------------------- */
 .text-content-ins {
     max-width: 1100px;
     margin: 0 auto 2rem auto;
-    padding: 1.5rem 1.5rem;
+    padding: 1.5rem;
     border: 1px solid rgba(12, 183, 23, 0.792);
     border-radius: 12px;
     background-color: rgba(8,75,104,0.17);
@@ -39,7 +83,8 @@
     box-sizing: border-box;
 }
 
-.text-content-ins p {
+.text-content-ins p,
+.text-content-ins li {
     font-family: 'Genos', sans-serif;
     font-size: 1.3rem;
     line-height: 1.7;
@@ -48,22 +93,21 @@
     text-justify: inter-word;
 }
 
-
-.text-content-ins li{
-    font-family: 'Genos', sans-serif;
-    font-size: 1.3rem;
-    line-height: 1.7;
-    margin-bottom: 1rem;
-    text-align: justify;
-    text-justify: inter-word;
+.text-content-ins h2 {
+  font-family: 'Genos', sans-serif;
+  margin-top: 0;
 }
 
+/* ----------------------------------------
+   Visualization titles
+   ---------------------------------------- */
 .viz-title0 {
   font-family: 'Genos', sans-serif;
   font-size: 2rem;
   margin-bottom: 1rem;
   text-align: center;
 }
+
 .viz-title1 {
   font-family: 'Genos', sans-serif;
   border: 2px solid rgba(150, 150, 150, 0.3);
@@ -77,11 +121,9 @@
   text-align: center;
 }
 
-.text-content-ins h2 {
-  font-family: 'Genos', sans-serif;
-  margin-top: 0;
-}
-
+/* ----------------------------------------
+   Tableau embed wrapper
+   ---------------------------------------- */
 .viz-embed {
   width: 100%;
   display: flex;
@@ -95,30 +137,36 @@
 .tableau {
   position: relative;
   width: 100%;
-  padding-bottom: 56.25%;
+  padding-bottom: 56.25%;  /* 16:9 aspect */
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* ΑΛΛΑΓΗ ΕΔΩ: ΣΤΟΧΕΥΣΗ ΤΟΥ IFRAME ΑΠΕΥΘΕΙΑΣ ΜΕΣΑ ΣΤΟ .tableau */
+/* Target iframe directly inside .tableau */
 .tableau iframe {
   position: absolute;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   border: none;
 }
+
+/* Change embed layout to row on tablets and up */
 @media (min-width: 768px) {
   .viz-embed {
     flex-direction: row;
   }
 }
 
-/* Info icon */
+/* ----------------------------------------
+   Info icon and overlay
+   ---------------------------------------- */
 .info-icon {
   position: absolute;
+  top: 0;
+  right: 5px;
   margin-top: -20px;
-  right: -5px;
   width: 30px;
   height: 30px;
   background-color: rgba(12, 121, 188, 0.493);
@@ -141,7 +189,6 @@
   background-color: rgb(12, 121, 188);
 }
 
-/* Info box overlay + animation */
 .info-box-overlay {
   position: fixed;
   top: 0;
@@ -157,10 +204,12 @@
   z-index: 1000;
   animation: fadeIn 0.3s ease-in-out;
 }
+
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
+
 .info-box {
   background-color: white;
   color: #333;
@@ -171,17 +220,20 @@
   position: relative;
   text-align: left;
 }
+
 .info-box h3 {
   margin-top: 0;
   font-family: 'Genos', sans-serif;
   color: #007bff;
   margin-bottom: 1rem;
 }
+
 .info-box p {
   font-family: 'Genos', sans-serif;
   font-size: 1rem;
   line-height: 1.6;
 }
+
 .close-button {
   position: absolute;
   top: 10px;
@@ -195,13 +247,17 @@
   border-radius: 50%;
   transition: background-color 0.2s ease;
 }
+
 .close-button:hover {
   background-color: #eee;
 }
 
+/* ----------------------------------------
+   Source text - View on Tableau Public
+   ---------------------------------------- */
 .viz-source {
   position: relative;
-  z-index: 200;       /* πάνω από το iframe */
+  z-index: 200;       /* above the iframe */
   pointer-events: auto;
   max-width: 1200px;
   margin: 1rem auto;
@@ -210,23 +266,98 @@
   color: #ccc;
   text-align: left;
   box-sizing: border-box;
-  margin-top:-220px;
+  margin-top: -150px;
 }
 
-/* Το ίδιο το <a> */
 .viz-source a {
-  color: #007bff;;
+  color: #007bff;
   text-decoration: none;
   cursor: pointer;
 }
 
 .viz-source span {
-  color: #cccccc;
+  color: #c7d1dc;
   text-decoration: none;
   cursor: pointer;
 }
 
 .viz-source a:hover {
   text-decoration: underline;
-  color: #007bff;
+}
+
+
+/* Από 585px και πάνω */
+@media (min-width: 585px) {
+  .viz-source {
+    margin-top: -180px;
+  }
+}
+
+/* Από 768px και πάνω */
+@media (min-width: 768px) {
+  .viz-source {
+    margin-top: -150px;
+    left: -50px;
+  }
+}
+
+/* Από 1344px και πάνω */
+@media (min-width: 1344px) {
+  .viz-source {
+    margin-top: -180px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .viz-source {
+    margin-top: -220px;
+  }
+}
+/* Από 1920px και πάνω */
+@media (min-width: 1920px) {
+  .viz-source {
+    margin-top: -240px;
+  }
+}
+
+@media (min-width: 585px) {
+  .tableau {
+    width: 95%;
+    max-width: 1100px;
+    margin-bottom: 2.5rem;
+  }
+}
+
+/* From 768px and up: tablets/mικρά laptops */
+@media (min-width: 768px) {
+  .viz-container{
+    left:50px;
+  }
+  .tableau {
+    width: 80%;
+    max-width: 1000px;
+    left:-180px;
+  }
+
+  .info-icon{
+    right: -285px;
+  }
+}
+
+/* From 1344px and up: small desktop */
+@media (min-width: 1344px) {
+  .tableau {
+    width: 85%;
+    max-width: 1400px;
+    margin-bottom: 3.5rem;
+  }
+}
+
+/* From 1920px and up: large desktop */
+@media (min-width: 1920px) {
+  .tableau {
+    width: 80%;
+    max-width: 1600px;
+    margin-bottom: 4rem;
+  }
 }
